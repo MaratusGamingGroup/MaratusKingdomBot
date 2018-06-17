@@ -1,5 +1,5 @@
 {
-  "name": "maratuskingdombot",
+  "name": "maratusbot",
   "version": "1.0.0",
   "description": "discord and twitch management bot",
   "main": "index.js",
