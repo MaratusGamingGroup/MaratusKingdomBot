@@ -42,9 +42,15 @@ client.on('message', async message =>
 
 client.on('guildMemberAdd', member => 
 {
-    const memberlog = member.guilds.channel.find('name', "members-log");
+    let memberlog = member.guild.channels.find('name', "member-log");
     if(!memberlog) return channel.send("No such channel");
     memberlog.send(`${member} Joined the server!`)
+});
+client.on('guildMemberRemove', member => {
+    let memberlog = member.guild.channels.find('name', "member-log");
+    if(!memberlog) return channel.send("No such channel");
+    memberlog.send(`${member} Left the server!`);
+    
 });
 
 client.login(tokenfile.token);

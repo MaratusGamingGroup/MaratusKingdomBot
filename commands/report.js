@@ -15,12 +15,18 @@ module.exports.run = async (client, message, args) =>
                         .addField('Channel', message.channel)
                         .addField('Time', message.createdAt)
                         .addField('Reason', rreason);
-
+                        
+                        let admin = message.guild.roles.find("name", "Kingdom Royals");                  
                             let reportschannel = message.guild.channels.find(`name`, 'reports');
                                 if(!reportschannel) return message.channel.send('Could not find reports channel.');
+                                if(!admin) return message.channel.send('Could not find the Role Kingdom Royals.');
                                     message.delete().catch(O_o=>{});
-                                    reportschannel.send(reportEmbed);
-    }           
+                                        reportschannel.send(reportEmbed);
+                                          message.send(`${admin}`,"A report has been made against a member in the kingdom");
+
+
+    };    
+             
 
 module.exports.help = 
 {
