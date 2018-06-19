@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.3.2",
-    "python": "0.0.4"
+    "python": "0.0.4",
+    "twitch-api-v5": "^2.0.3"
   }
 }
